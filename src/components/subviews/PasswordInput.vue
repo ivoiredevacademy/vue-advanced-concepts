@@ -16,8 +16,6 @@ const props = defineProps({
 function toggle() {
     canSee.value = !canSee.value;
 }
-
-
 </script>
 
 <template>
@@ -26,7 +24,7 @@ function toggle() {
             :type="inputType" 
             class="form-input" 
             placeholder="*********"
-            :value="props.modelValue"
+            :value="props.password"
             @input="emits('update:password', $event.target.value)"
         >
         <a href="#" class="eye-container" @click.prevent="toggle"><i :class="iconClassName"></i></a>
