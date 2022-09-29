@@ -1,9 +1,9 @@
 <script setup>
-import LoginForm from './views/LoginForm.vue';
+import Blog from './views/Blog.vue';
 
 </script>
 
 <template>
-  <LoginForm />
+  <blog />
 </template>
 
