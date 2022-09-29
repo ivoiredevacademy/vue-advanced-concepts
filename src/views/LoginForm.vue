@@ -1,9 +1,9 @@
 <script setup>
-import LoginAside from '../components/LoginAside.vue';
-import PasswordInput from '../components/subviews/PasswordInput.vue';
+import LoginAside from '../components/v-model/LoginAside.vue';
+import PasswordInput from '../components/v-model/PasswordInput.vue';
 import { ref } from 'vue';
 
-const email = ref('');
+const email = ref("");
 const password = ref("");
 
 </script>
