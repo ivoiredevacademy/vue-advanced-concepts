@@ -6,12 +6,17 @@ import { ref } from 'vue';
 const email = ref("");
 const password = ref("");
 
+
+function login() {
+  console.log(password.value);
+}
+
 </script>
 
 <template>
   <div class="flex min-h-screen">
     <div class="w-1/2 flex items-center justify-center">
-      <div class="w-2/3">
+      <form class="w-2/3" @submit.prevent="login">
         <h2 class="text-4xl font-semibold">Connexion</h2>
         <div class="form-group">
           <label for="#">Email</label>
@@ -26,7 +31,7 @@ const password = ref("");
         <div>
           <button class="btn">Se connecter</button>
         </div>
-      </div>
+      </form>
     </div>
     <login-aside />
   </div>

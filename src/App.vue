@@ -4,6 +4,6 @@ import Blog from './views/Blog.vue';
 </script>
 
 <template>
-  <blog />
+  <Blog />
 </template>
 
