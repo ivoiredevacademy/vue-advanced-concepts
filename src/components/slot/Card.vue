@@ -13,8 +13,7 @@ const props = defineProps({
     default: false,
   }
 });
-console.log(props.post.createdAt);
-console.log(new Date(props.post.createdAt));
+
 const { post, centerImage } = toRefs(props)
 const formattedCreatedAt = computed(() => formatDistance(new Date(props.post.createdAt), new Date(), { addSuffix: true }))
 </script>

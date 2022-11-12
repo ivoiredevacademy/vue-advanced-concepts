@@ -1,5 +1,6 @@
 <script setup>
-import { defineProps, toRefs } from 'vue';
+import { defineProps, toRefs, computed } from 'vue';
+import { formatDistance } from 'date-fns';
 
 const props = defineProps({
   cover: {
@@ -9,10 +10,16 @@ const props = defineProps({
   centerImage: {
     type: Boolean,
     default: false,
+  },
+  createdAt: {
+    type: String,
+    required: true,
   }
 });
 
-const { cover, centerImage } = toRefs(props)
+const { cover, centerImage } = toRefs(props);
+
+const formattedCreatedAt = computed(() => formatDistance(new Date(props.createdAt), new Date(), { addSuffix: true }))
 </script>
 
 <template>
@@ -23,7 +30,9 @@ const { cover, centerImage } = toRefs(props)
     <div>
       <slot></slot>
       <div class="border-t border-t-gray my-4">
-        <slot name="footer">date</slot>
+        <slot name="footer" :formatted-date="formattedCreatedAt">
+          {{ formattedCreatedAt }}
+        </slot>
       </div>
     </div>
   </div>
