@@ -24,9 +24,9 @@ const post = ref({
           <h1 class="text-3xl font-semibold">{{ post.title }}</h1>
           <p class="text-gray-600">{{ post.description }}</p>
         </div>
-        <template v-slot:footer="footerSlotProps">
+        <template v-slot:footer="{formattedDate}">
           <span class="text-gray-500 my-3 flex justify-end">
-            {{ footerSlotProps.formattedDate }}
+            {{ formattedDate }}
           </span>
         </template>
       </blog-card-slot>
