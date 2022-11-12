@@ -1,5 +1,6 @@
 <script setup>
-import { defineProps, toRefs } from 'vue';
+import { defineProps, toRefs, computed } from 'vue';
+import { formatDistance } from 'date-fns';
 
 const props = defineProps({
   post: {
@@ -12,8 +13,10 @@ const props = defineProps({
     default: false,
   }
 });
-
+console.log(props.post.createdAt);
+console.log(new Date(props.post.createdAt));
 const { post, centerImage } = toRefs(props)
+const formattedCreatedAt = computed(() => formatDistance(new Date(props.post.createdAt), new Date(), { addSuffix: true }))
 </script>
 
 <template>
@@ -25,7 +28,7 @@ const { post, centerImage } = toRefs(props)
       <span class="text-3xl font-semibold mb-2 flex">{{ post.title }}</span>
       <p class="text-gray-500">{{ post.description }}</p>
       <div class="flex justify-end">
-        {{ post.createdAt.toString() }}
+        {{ formattedCreatedAt }}
       </div>
     </div>
   </div>

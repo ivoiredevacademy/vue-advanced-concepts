@@ -7,7 +7,7 @@ const post = ref({
   id: 1,
   title: "What's new in Vue 3 ?",
   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore minus rerum, reiciendis consectetur neque recusandae, soluta minima nemo nulla quisquam natus corporis debitis excepturi, consequuntur voluptates reprehenderit voluptate iusto culpa!",
-  createdAt: "10-09-2022",
+  createdAt: "10/09/2022",
   cover: 'https://cdn.cdnlogo.com/logos/v/92/vue-js.svg'
 })
 
