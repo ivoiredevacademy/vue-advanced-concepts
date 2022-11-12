@@ -1,19 +1,38 @@
 <script setup>
-import { inject } from 'vue';
+import { inject, computed, onMounted } from 'vue';
 const props = defineProps({
   title: {
     type: String,
     required: true,
+  },
+  id: {
+    type: Number,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    default: false,
   }
 })
 
-const tabsTitle = inject('tabsTitle');
-console.log(tabsTitle);
+const tabTitles = inject('tabTitles');
+const activeTabId = inject('activeTabId');
+
+
+onMounted(() => {
+  tabTitles.value.push({ title: props.title, id: props.id });
+
+  if(props.active) {
+    activeTabId.value = props.id;
+  }
+});
+
+const isActive = computed(() => activeTabId.value === props.id);
+
 </script>
 
 <template>
-  <div>
-
+  <div v-if="isActive" class="py-4">
     <slot></slot>
   </div>
 </template>
