@@ -11,15 +11,13 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  createdAt: {
-    type: String,
-    required: true,
-  }
 });
 
 const { cover, centerImage } = toRefs(props);
 
-const formattedCreatedAt = computed(() => formatDistance(new Date(props.createdAt), new Date(), { addSuffix: true }))
+function reformatDate(date) {
+  return formatDistance(new Date(date), new Date(), { addSuffix: true });
+}
 </script>
 
 <template>
@@ -30,8 +28,7 @@ const formattedCreatedAt = computed(() => formatDistance(new Date(props.createdA
     <div>
       <slot></slot>
       <div class="border-t border-t-gray my-4">
-        <slot name="footer" :formatted-date="formattedCreatedAt">
-          {{ formattedCreatedAt }}
+        <slot name="footer" :reformatDate="reformatDate">
         </slot>
       </div>
     </div>
