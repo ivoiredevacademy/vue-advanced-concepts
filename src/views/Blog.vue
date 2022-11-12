@@ -15,16 +15,19 @@ const post = ref({
 
 <template>
   <div class="flex flex-col min-h-screen bg-blue-200 py-20">
+
     <div class="flex items-center justify-center">
       <blog-card :post="post" />
     </div>
+
+
     <div class="flex items-center justify-center">
       <blog-card-slot :cover="post.cover">
         <div>
-          <h1 class="text-3xl font-semibold">{{ post.title }}</h1>
+          <h1 class="text-4xl font-semibold">{{ post.title }}</h1>
           <p class="text-gray-600">{{ post.description }}</p>
         </div>
-        <template v-slot:footer="{ reformatDate}">
+        <template v-slot:footer="{ reformatDate }">
           <span class="text-gray-500 my-3 flex justify-end">
             {{ reformatDate(post.createdAt) }}
           </span>

@@ -1,9 +1,9 @@
 <script setup>
-import Blog from './views/Blog.vue';
+import ShowTabs from './views/ShowTabs.vue';
 
 </script>
 
 <template>
-  <Blog />
+  <show-tabs />
 </template>
 
