@@ -18,7 +18,6 @@ const props = defineProps({
 const tabTitles = inject('tabTitles');
 const activeTabId = inject('activeTabId');
 
-
 onMounted(() => {
   tabTitles.value.push({ title: props.title, id: props.id });
 

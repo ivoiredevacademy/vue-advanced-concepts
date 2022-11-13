@@ -15,7 +15,7 @@ function setActiveTab(tab) {
   <div>
     <ul class="flex border-b border-b-gray-200">
       <li v-for="tab in tabTitles"
-        class="mx-10 py-3 cursor-pointer border-b border-b-gray-200"
+        class="mx-6 py-3 cursor-pointer border-b border-b-gray-200"
         :key="tab.id"
         @click="setActiveTab(tab)"
         :class="{'border-b-4 border-b-blue-500': activeTabId == tab.id}"

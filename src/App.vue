@@ -1,9 +1,9 @@
 <script setup>
-import ShowTabs from './views/ShowTabs.vue';
+import DesignSystem from './views/DesignSystem.vue';
 
 </script>
 
 <template>
-  <show-tabs />
+  <design-system />
 </template>
 
